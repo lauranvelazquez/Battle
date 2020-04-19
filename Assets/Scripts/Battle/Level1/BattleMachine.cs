@@ -210,18 +210,21 @@ public class BattleMachine : MonoBehaviour
                 {
                     case 1:
                         //_states.Attack();
+                        _damage = 5;
                         Debug.Log("2-Invisibility");
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
                         break;
                     case 2:
                         //_states.Attack();
+                        _damage = 10;
                         Debug.Log("2-Attack");
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
                         break;
                     case 3:
                         //_states.Scanner();
+                        _damage = 15;
                         Debug.Log("2-Scanner");
                         Enemy.IsVirus1Playing = false;
                         states = BattleStates.EnemySelectPlayer;
@@ -236,7 +239,7 @@ public class BattleMachine : MonoBehaviour
                 if (RandomState.StateE%2==0)
                 {
                     Debug.Log("Attack to Hacker");
-                    scoreData.hLife = scoreData.hLife - Virus1.Instance._damage;
+                    scoreData.hLife = scoreData.hLife - _damage;
                     states = BattleStates.PlayerSelection;
                 }
                 else
