@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\usuario\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\usuario\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Inventario.-1783678372.00" t="ExcludeRecursive" />
+    <e p="D:\UPC\Inventario" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Inventory" t="Include">
+          <e p="InventoryItem.cs" t="Include" />
+          <e p="InventoryScript.cs" t="Include" />
+          <e p="OpenCards.cs" t="Include" />
+        </e>
+        <e p="NPC" t="Include">
+          <e p="NPCOther.cs" t="Include" />
+          <e p="NPCShop.cs" t="Include" />
+        </e>
+        <e p="Prefabs" t="Include">
+          <e p="Navmesh" t="Include">
+            <e p="NavmeshAssetManager.cs" t="Include" />
+            <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
+            <e p="NavmeshLink.cs" t="Include" />
+            <e p="NavMeshLinkEditor.cs" t="Include" />
+            <e p="NavMeshModifier.cs" t="Include" />
+            <e p="NavmeshModifierEditor.cs" t="Include" />
+            <e p="NavMeshModifierVolume.cs" t="Include" />
+            <e p="NavMeshModifierVolumeEditor.cs" t="Include" />
+            <e p="NavMeshSurface.cs" t="Include" />
+            <e p="NavMeshSurfaceEditor.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Battle" t="Include">
+            <e p="BattleHUD.cs" t="Include" />
+            <e p="Bioware.cs" t="Include" />
+            <e p="Hacker.cs" t="Include" />
+            <e p="Level1" t="Include">
+              <e p="BattleMachine.cs" t="Include" />
+              <e p="Enemy.cs" t="Include" />
+              <e p="StartLevel1.cs" t="Include" />
+            </e>
+            <e p="Level2" t="Include">
+              <e p="BattleMachine2.cs" t="Include" />
+              <e p="StartLevel2.cs" t="Include" />
+              <e p="Virus3.cs" t="Include" />
+            </e>
+            <e p="Level3" t="Include">
+              <e p="BattleMachine3.cs" t="Include" />
+              <e p="Enemy3.cs" t="Include" />
+              <e p="StartLevel3.cs" t="Include" />
+              <e p="Virus2.cs" t="Include" />
+              <e p="Virus3Again.cs" t="Include" />
+            </e>
+            <e p="Mago.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="States.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="Virus1.cs" t="Include" />
+          </e>
+          <e p="Data" t="Include">
+            <e p="Enums.cs" t="Include" />
+            <e p="EventController.cs" t="Include" />
+            <e p="Fight.cs" t="Include" />
+            <e p="GameEvents.cs" t="Include" />
+            <e p="InputData.cs" t="Include" />
+            <e p="NewPlayableAsset.cs" t="Include" />
+            <e p="RandomState.cs" t="Include" />
+            <e p="ScoreData.cs" t="Include" />
+          </e>
+          <e p="FSM" t="Include">
+            <e p="Controllers" t="Include">
+              <e p="Battle.cs" t="Include" />
+              <e p="BiowareController.cs" t="Include" />
+              <e p="CharacterController.cs" t="Include" />
+              <e p="CharacterController1.cs" t="Include" />
+              <e p="ChooseCharacter.cs" t="Include" />
+              <e p="HackerController.cs" t="Include" />
+              <e p="MagoController.cs" t="Include" />
+              <e p="MovementVirus2.cs" t="Include" />
+              <e p="Pointer.cs" t="Include" />
+              <e p="SimpleMovement.cs" t="Include" />
+              <e p="TManager.cs" t="Include" />
+              <e p="Virus.cs" t="Include" />
+              <e p="Virus1Controller.cs" t="Include" />
+              <e p="Virus2Controller.cs" t="Include" />
+              <e p="Virus3Controller.cs" t="Include" />
+              <e p="Virus4Controller.cs" t="Include" />
+            </e>
+            <e p="FSM.cs" t="Include" />
+            <e p="State.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="AttackingState.cs" t="Include" />
+              <e p="BlockingState.cs" t="Include" />
+              <e p="BuggingState.cs" t="Include" />
+              <e p="CopyingState.cs" t="Include" />
+              <e p="DieState.cs" t="Include" />
+              <e p="DoublingState.cs" t="Include" />
+              <e p="ElectricityState.cs" t="Include" />
+              <e p="FightingState.cs" t="Include" />
+              <e p="IddleState.cs" t="Include" />
+              <e p="InvisibilityState.cs" t="Include" />
+              <e p="LightningState.cs" t="Include" />
+              <e p="PixelingState.cs" t="Include" />
+              <e p="PlayerMoveState.cs" t="Include" />
+              <e p="ScannerState.cs" t="Include" />
+              <e p="ShootingState.cs" t="Include" />
+              <e p="StealingState.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GameElements" t="Include">
+            <e p="Follow.cs" t="Include" />
+            <e p="FollowNegativ.cs" t="Include" />
+            <e p="FollowOne.cs" t="Include" />
+            <e p="LifeTree.cs" t="Include" />
+            <e p="Teleport.cs" t="Include" />
+            <e p="TeleportBack.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="GameplayTime.cs" t="Include" />
+            <e p="GamePointsBar.cs" t="Include" />
+            <e p="ScoreBarScript.cs" t="Include" />
+            <e p="ShootingPointsBar.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ScriptsUI" t="Include">
+          <e p="View" t="Include">
+            <e p="Scenes" t="Include">
+              <e p="ChangeScene.cs" t="Include" />
+              <e p="CoursorGame.cs" t="Include" />
+              <e p="InputNameAudio.cs" t="Include" />
+              <e p="panelOpened.cs" t="Include" />
+              <e p="Texto.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Shop" t="Include">
+          <e p="CloseShop.cs" t="Include" />
+          <e p="Shop.cs" t="Include" />
+          <e p="ShopItem.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Inventario.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
