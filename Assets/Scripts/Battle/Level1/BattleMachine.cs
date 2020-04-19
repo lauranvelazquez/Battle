@@ -48,6 +48,10 @@ public class BattleMachine : MonoBehaviour
     private CharacterController1 _characterController1;
     public static int lifeBattleVirus1=100;
     public static int lifeBattleVirus2=100;
+
+    public bool isEnemySelected;
+    public bool virus1Choosed=false;
+    public bool virus2Choosed=false;
     private int c=2;
     [SerializeField] private KeyCode bugKey, copyKey, stealKey;
     [SerializeField] private KeyCode _electricityKey, _pixelKey, _LightingKey;
@@ -79,14 +83,14 @@ public class BattleMachine : MonoBehaviour
                 {
                     Player.IsHackerPlaying = true;
                     dialogText.text = "You selected hacker";
-                    states = BattleStates.SkillSelection;
+                    states = BattleStates.EnemySelection;
 
                 }
                 else if (Input.GetKeyDown(KeyCode.E))
                 {
                     dialogText.text = "You selected mago";
                     Player.IsMagoPlaying = true;
-                    states = BattleStates.SkillSelection;
+                    states = BattleStates.EnemySelection;
                 }
                 
                 break;
@@ -97,30 +101,35 @@ public class BattleMachine : MonoBehaviour
                     if (Input.GetKeyDown(_pixelKey))
                     {
                         _damage = 5;
-                        states = BattleStates.EnemySelection;
-                       // _states.Pixeling();
+                        // _states.Pixeling();
                         Debug.Log("pixel");
                         Player.IsMagoPlaying = false;
-                        BattleMachine.OnPlayerTurn = false;
+                        RestScore();
+                        states = BattleStates.Enemyturn;
                     }
                     else if (Input.GetKeyDown(_electricityKey) && Mago.Instance._electricityLimit > 0)
                     {
                         _damage = 10;
-                        states = BattleStates.EnemySelection;
                         //_states.Electricity();
                         Debug.Log("Electricity");
                         Player.IsMagoPlaying = false;
                         Mago.Instance._electricityLimit--;
+                        RestScore();
+                        states = BattleStates.Enemyturn;
                     }
                     else if (Input.GetKeyDown(_LightingKey)&&scoreData.shootingPoints==100)
                     {
                         _damage = 15;
-                        states = BattleStates.EnemySelection;
                         //_states.Light();
                         Debug.Log("Light");
                         Player.IsMagoPlaying = false;
-                       
+                        RestScore();
+                        states = BattleStates.Enemyturn;
                         scoreData.shootingPoints = 0;
+                    }
+                    if (lifeBattleVirus1<=0 & lifeBattleVirus2<=0)
+                    {
+                        states = BattleStates.Won;
                     }
                 }
                 else if (Player.IsHackerPlaying)
@@ -129,36 +138,38 @@ public class BattleMachine : MonoBehaviour
                     {
                         _damage = 5;
                         Debug.Log("1");
-                        states =BattleStates.EnemySelection;
+                        states = BattleStates.Enemyturn;
+
                     }
                     else if (Input.GetKeyDown(copyKey))
                     {
                         _damage = 10;
                         Debug.Log("2");
                         Hacker.Instance._damage = 10;
-                        states =BattleStates.EnemySelection;
+                        states = BattleStates.Enemyturn;
                     }
                     else if ( Input.GetKeyDown(stealKey))//añadir condicion 
                     {
                         _damage = 15;
                         Debug.Log("3");
-                        states =BattleStates.EnemySelection;
+                        states = BattleStates.Enemyturn;
                     }
                 }
                 break;
             case BattleStates.EnemySelection:
                 Debug.Log("Select an anemy to attack");
-                if (Input.GetKeyDown(KeyCode.Keypad1))
+               if (Input.GetKeyDown(KeyCode.Keypad1))
                 {
                     Debug.Log("Attack to Virus 1");
-                    lifeBattleVirus1 = lifeBattleVirus1 - _damage;
-                    states = BattleStates.Enemyturn;
+                    virus1Choosed = true;
+                    states = BattleStates.SkillSelection;
                 }
                     
                 else if (Input.GetKeyDown(KeyCode.Keypad2))
                 {
                     Debug.Log("Attack to Virus 2");
-                    lifeBattleVirus2 = lifeBattleVirus2 - _damage;
+                    virus2Choosed = true;
+                    states = BattleStates.SkillSelection;
                 }
                 if (lifeBattleVirus1<=0 & lifeBattleVirus2<=0)
                 {
@@ -198,22 +209,22 @@ public class BattleMachine : MonoBehaviour
                 switch (RandomState.StateE)
                 {
                     case 1:
-                        states = BattleStates.EnemySelectPlayer;
                         //_states.Attack();
                         Debug.Log("2-Invisibility");
                         Enemy.IsVirus1Playing = false;
+                        states = BattleStates.EnemySelectPlayer;
                         break;
                     case 2:
-                        states = BattleStates.EnemySelectPlayer;
                         //_states.Attack();
                         Debug.Log("2-Attack");
                         Enemy.IsVirus1Playing = false;
+                        states = BattleStates.EnemySelectPlayer;
                         break;
                     case 3:
-                        states = BattleStates.EnemySelectPlayer;
                         //_states.Scanner();
                         Debug.Log("2-Scanner");
                         Enemy.IsVirus1Playing = false;
+                        states = BattleStates.EnemySelectPlayer;
                         break;
                     default:
                         Debug.Log("No anda el virus");
@@ -317,6 +328,21 @@ public class BattleMachine : MonoBehaviour
         else if (states == BattleStates.Lost)
         {
             dialogText.text = "You loose";
+        }
+    }
+
+    void RestScore()
+    {
+
+        if (virus1Choosed)
+        {
+            lifeBattleVirus1 = lifeBattleVirus1 - _damage;
+            virus1Choosed = false;
+        }
+        else if (virus2Choosed)
+        {
+            lifeBattleVirus2 = lifeBattleVirus2 - _damage;
+            virus2Choosed = false;
         }
     }
 
